@@ -7,12 +7,12 @@ import Order from "./components/Order/Order.js";
 import Total from "./components/Order/Total/Total.js"
 
 const AVAILABLE_FOOD = [
-    {name: 'Hamburger', price: 80, label: 'Гамбургер'},
-    {name: 'Cheeseburger', price: 90, label: 'Чизбургер'},
-    {name: 'Fries', price: 45, label: 'Картофель фри'},
-    {name: 'Coffee', price: 70, label: 'Кофе'},
-    {name: 'Tea', price: 25, label: 'Чай'},
-    {name: 'Cola', price: 30, label: 'Кола'}
+    {name: 'Hamburger', price: 80, label: 'Гамбургер', type: 'food'},
+    {name: 'Cheeseburger', price: 90, label: 'Чизбургер', type: 'food'},
+    {name: 'Fries', price: 45, label: 'Картофель фри', type: 'food'},
+    {name: 'Coffee', price: 70, label: 'Кофе', type: 'drink'},
+    {name: 'Tea', price: 25, label: 'Чай', type: 'drink'},
+    {name: 'Cola', price: 30, label: 'Кола', type: 'drink'}
 ];
 
 const ORDER = [
