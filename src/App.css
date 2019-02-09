@@ -1,35 +1,43 @@
 .container {
-  max-width: 90%;
-  margin: 10px auto;
+    max-width: 90%;
+    margin: 10px auto;
+}
+
+.order {
+    display: inline-block;
+
+    width: 39%;
 }
 
 .menu {
-  width: 60%;
-  float: right;
-  border: 3px double;
+    display: inline-block;
+
+    width: 60%;
+    float: right;
+    border: 3px solid black;
 }
 
 .food {
-  display: inline-block;
-  width: 45%;
-  margin: 5px;
-  border: 2px solid black;
-  text-align: center;
-  padding: 5px;
-  border-radius: 20px;
+    display: inline-block;
+    width: 45%;
+    margin: 5px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 .info {
-  display: inline-block;
-  text-align: left;
-  width: 60%;
+    display: inline-block;
+    text-align: left;
+    width: 60%;
 }
 
 .info p {
-  margin: 7px;
+    margin: 7px;
 }
 
 .info span {
-  margin: 7px;
+    margin: 7px;
 }
 

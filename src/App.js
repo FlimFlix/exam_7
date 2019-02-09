@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Menu from "./components/Menu";
+import Menu from "./components/Food/Menu.js";
 import Food from "./components/Food/Food";
+import OrderDetail from "./components/Order/OrderDetail/OrderDetail";
+import Order from "./components/Order/Order.js";
 
 const AVAILABLE_FOOD = [
     {name: 'Hamburger', price: 80, label: 'Гамбургер'},
@@ -13,7 +15,8 @@ const AVAILABLE_FOOD = [
 ];
 
 const ORDER = [
-    {name: '', amount: 1}
+    {name: 'Hamburger', amount: 1},
+    {name: 'Tea', amount: 1}
 ];
 
 class App extends Component {
@@ -33,11 +36,31 @@ class App extends Component {
             return food;
         })};
 
+   changeFood = (name, amount) => {
+        let index = this.state.foods.findIndex(item => item.name === name);
+        let food = {...this.state.foods[index]};
+
+        food.amount += amount;
+        if(food.amount < 0) food.amount = 0;
+        food.total = food.amount * food.price;
+
+        let foods = [...this.state.foods];
+        foods[index] = food;
+
+        let state = {...this.state, foods};
+
+        this.setState(state);
+    };
+
   render() {
     return (
       <div className="container">
+        <Order>
+            {this.state.foods.map(item => <OrderDetail food={item} key={item.name}
+                                                       changeFood={this.changeFood}/>)}
+        </Order>
         <Menu>
-            {this.state.foods.map(item => <Food food={item} key={item.name}/>)}
+            {this.state.foods.map(item => <Food food={item} key={item.name} />)}
         </Menu>
       </div>
     );
